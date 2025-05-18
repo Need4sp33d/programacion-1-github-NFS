@@ -27,7 +27,20 @@ public class Empresa {
         }
         return listEmpleadosCargo;
     }
+    public double determinarSalarioAlto{
+          Empleado[] listSalarioAlto = obtenerListNoNull(listEmpleados);
+              for (int i = 0; i < listSalarioAlto.length; i++){
+                  for (int j = 0;j < listSalarioAlto.length; j++){
+                      if(listSalario[i].getSalario < listSalarioAlto[j].getSalario){
+                          empleado auxiliar = listSalarioAlto[j];
+                              listSalarioAlto[j] = listSalarioAlto[i];
+                              listSalarioAlto[i] = auxiliar;
+                      }
 
+                  }
+              }
+        return listSalarioAlto
+    }
     public boolean actulizarEmpleado(String idEmpleadoModificar, Empleado empleadomodificado) {
         int posicionEmpleadoModificar = buscarEmpleadoID(idEmpleadoModificar);
         if (posicionEmpleadoModificar == -1) {
@@ -74,9 +87,7 @@ public class Empresa {
         }
         return -1;
     }
-    public Empleado{
 
-    }
     public String getNombre() {
         return nombre;
     }
